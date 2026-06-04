@@ -9,7 +9,7 @@ if (!fs.existsSync(outDir)) fs.mkdirSync(outDir);
 
 const files = fs.readdirSync(mdDir).filter(f => f.endsWith('.md'));
 
-// Basic HTML Template with Telegram WebApp Script
+// Basic HTML Template with Telegram WebApp Script and Vercel Analytics
 const template = (title, content) => `
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +19,8 @@ const template = (title, content) => `
     <title>${title}</title>
     <!-- Telegram WebApp SDK -->
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <!-- Vercel Web Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 20px; line-height: 1.6; color: var(--tg-theme-text-color, #000); background-color: var(--tg-theme-bg-color, #fff); }
         a { color: var(--tg-theme-link-color, #007aff); }
